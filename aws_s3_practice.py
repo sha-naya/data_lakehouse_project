@@ -8,8 +8,8 @@ config.read("/Users/ayan/Desktop/BU/Spring 2023/cs779_keys.ini")
 s3 = boto3.resource(
     service_name='s3',
     region_name='us-east-1',
-    aws_access_key_id=config['s3']['access_key'], ### PUT ACCESS KEY HERE
-    aws_secret_access_key=config['s3']['secret_key'] ### PUT SECRET KEY HERE
+    aws_access_key_id=config['s3']['access_key'],
+    aws_secret_access_key=config['s3']['secret_key'],
 )
 
 for bucket in s3.buckets.all():
