@@ -7,7 +7,10 @@ config.read("/Users/ayan/Desktop/BU/Spring 2023/cs779_keys.ini")
 
 
 client = pymongo.MongoClient(
-    host=f"mongodb+srv://{config['mongodb']['database_user']}:{config['mongodb']['database_password']}@cs779.4yjspoh.mongodb.net/?retryWrites=true&w=majority",
+    host=f"mongodb+srv://{config['mongodb']['database_user']}:{config['mongodb']['database_password']}@mycluster.2gvwkvc.mongodb.net/?retryWrites=true&w=majority",
     )
-db = client.test
-print(db)
+
+db = client['sample_analytics']
+coll = db['transactions']
+x = coll.find_one()
+print(x)
